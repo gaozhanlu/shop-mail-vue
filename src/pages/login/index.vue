@@ -3,7 +3,7 @@
     <!-- 登录 -->
     <div class="login-wrap">
       <div class="login">
-        <div class="loginform">
+        <div class="loginForm">
           <ul class="tab clearFix">
             <li>
               <a href="##" style="border-right: 0">扫描登录</a>
@@ -19,17 +19,17 @@
               <div class="input-text clearFix">
                 <span></span>
                 <input
-                    type="text"
-                    placeholder="邮箱/用户名/手机号"
-                    v-model="phone"
+                  type="text"
+                  placeholder="邮箱/用户名/手机号"
+                  v-model="phone"
                 />
               </div>
               <div class="input-text clearFix">
                 <span class="pwd"></span>
                 <input
-                    type="text"
-                    placeholder="请输入密码"
-                    v-model="password"
+                  type="text"
+                  placeholder="请输入密码"
+                  v-model="password"
                 />
               </div>
               <div class="setting clearFix">
@@ -39,7 +39,7 @@
                 </label>
                 <span class="forget">忘记密码？</span>
               </div>
-              <!--
+              <!-- 
                 电脑登录按钮：会触发form表单默认行为
                 stop:阻止事件的传播
                 prevent:阻止默认事件
@@ -52,26 +52,17 @@
 
             <div class="call clearFix">
               <ul>
-                <li><img src="./images/qq.png" alt="" /></li>
-                <li><img src="./images/sina.png" alt="" /></li>
-                <li><img src="./images/ali.png" alt="" /></li>
-                <li><img src="./images/weixin.png" alt="" /></li>
+
               </ul>
               <router-link class="register" to="/register"
-              >立即注册</router-link
+                >立即注册</router-link
               >
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- 底部 -->
-    <div class="copyright">
-      <ul>
-        <li>关于我们</li>
-      </ul>
-      <div class="address">地址：北京市昌平区宏福科技园综合楼6层</div>
-    </div>
+
   </div>
 </template>
 
@@ -97,7 +88,7 @@ export default {
 
         let goPath = this.$route.query.redirect||'/home';
         //跳转到首页
-        this.$router.push(goPath);
+
       } catch (error) {
         alert(error.message);
       }
@@ -110,16 +101,16 @@ export default {
 .login-container {
   .login-wrap {
     height: 487px;
-    background-color: #e93854;
+    background-color: #fdfdfd;
 
     .login {
       width: 1200px;
       height: 487px;
       margin: 0 auto;
-      background: url(./images/loginbg.png) no-repeat;
+      background: url(../../../../shop-mall-vue/src/pages/login/images/elephant.png) no-repeat;
     }
 
-    .loginform {
+    .loginForm {
       width: 420px;
       height: 406px;
       box-sizing: border-box;
@@ -142,7 +133,7 @@ export default {
             line-height: 50px;
             font-size: 20px;
             font-weight: 700;
-            color: #333;
+            color: #210303;
             border: 1px solid #ddd;
             box-sizing: border-box;
             text-decoration: none;
@@ -151,7 +142,7 @@ export default {
           .current {
             border-bottom: none;
             border-top-color: #28a3ef;
-            color: #e1251b;
+            color: #170505;
           }
         }
       }
@@ -216,13 +207,13 @@ export default {
           }
 
           .btn {
-            background-color: #e1251b;
+            background-color: #877c7b;
             padding: 6px;
             border-radius: 0;
             font-size: 16px;
             font-family: 微软雅黑;
             word-spacing: 4px;
-            border: 1px solid #e1251b;
+            border: 1px solid #786765;
             color: #fff;
             width: 100%;
             height: 36px;

@@ -1,22 +1,30 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="HelloWord"/>
-    <Login msg="Login,work"/>
+  <div>
+
+    <Header></Header>
+
+    <!-- 路由组件出口的位置:不设置路由组件不知道在哪里显示 -->
+    <router-view></router-view>
+    <!-- 发现底部的Footer会随着路由的变化进行显示与隐藏 -->
+    <Footer v-show="$route.meta.show"></Footer>
   </div>
 </template>
 
 <script>
 
-// import HelloWorld from './components/HelloWorld.vue'
-// import Login from './components/Login.vue'
 
-import Login from './pages/login/index.vue'
+import Header from './components/header';
+import Footer from './components/footer';
+
+
 
 export default {
-  name: 'App',
+  name: '',
   components: {
-    Login
+    Header,
+
+    Footer,
+
   }
 }
 </script>
