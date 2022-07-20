@@ -1,6 +1,7 @@
 <template>
   <div>
     我是首页
+    <TypeNav></TypeNav>
   </div>
 </template>
 

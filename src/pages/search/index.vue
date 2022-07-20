@@ -7,6 +7,10 @@
 </template>
 
 <script>
+export default {
+  name:'',
+  props:['keyword','K']
+}
 
 </script>
 

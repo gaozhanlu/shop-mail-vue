@@ -9,7 +9,7 @@ export const reqUserLogin = (data)=>requests({url:`user/login`,method:'post',dat
 
 
 //获取验证码接口
-export const reqPostCode = (data)=>requests({url:`/user/happyCaptcha`,method:'post'});
+export const reqPostCode = (data)=>requests({url:`/user/happyCaptcha`,method:'post',data});
 
 //校验验证码
 export const checkPostCode=(data)=>requests({url:`/user/verify`,method:'post',data});

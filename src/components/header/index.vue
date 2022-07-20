@@ -6,7 +6,7 @@
         <div class="container">
           <div class="loginList">
             <p>gzl迎您！</p>
-<!--            <p v-if="!$store.state.user.nickName">-->
+            <p v-if="!$store.state.user.nickName">
             <p>
               <span>请</span>
               <!-- <a href="###">登录</a> -->
@@ -17,6 +17,11 @@
               <router-link class="login" to="/login">登录</router-link>
               <router-link class="register" to="/register">注册</router-link>
             </p>
+            <!-- 如果登录显示的是用户名字与退出登录 -->
+<!--            <p v-else>-->
+<!--              <a>{{$store.state.user.nickName}}</a>-->
+<!--&lt;!&ndash;              <a class="register" @click="logout">退出登录</a>&ndash;&gt;-->
+<!--            </p>-->
           </div>
           <div class="typeList">
             <router-link to="/center">我的订单</router-link>
@@ -38,7 +43,7 @@
           </router-link>
         </h1>
         <div class="searchArea">
-          <form action="###" class="searchForm">
+          <form action="###" class="2searchForm">
             <input
               type="text"
               id="autocomplete"
@@ -73,12 +78,21 @@ export default {
 
   methods:{
     goSearch() {
-      this.$router.push("/search/"+this.keyword+"?K="+this.keyword.toUpperCase());
-      //第一种传递query参数
-       //this.$router.push({path:'/search',query:{keyword:this.keyword}});
+      //路由传递参数：
+      //第一种：字符串形式
+      // this.$router.push("/search/"+this.keyword+"?K="+this.keyword.toUpperCase());
+      //第二种：模板字符串 注意符号
+      /*this.$router.push(`/search/${this.keyword}?K=${this.keyword.toUpperCase()}`);*/
 
+      //第三种：对象
+      // this.$router.push({name:"search",params:{keyword:this.keyword},query:{K:this.keyword.toUpperCase()}})
+
+      //第一种传递query参数
+      // this.$router.push({path:'/search',query:{keyword:this.keyword}});
+      // this.$router.push({path:'search',query:{keyword:this.keyword}});
       //第二种传递params参数 [一定要注意,面试的时候经常问]
-      // this.$router.push({name:'search',params:{keyword:this.keyword}})
+      let result=this.$router.push({name:'search',params:{keyword:this.keyword!=null?this.keyword:undefined},query:{K:this.keyword.toUpperCase()}});
+      console.log(result)
     }
   }
 
@@ -108,7 +122,7 @@ export default {
 
           .register {
             border-left: 1px solid #b3aeae;
-            padding: 0 5px;
+            padding: 0 0px;
             margin-left: 5px;
           }
         }

@@ -20,8 +20,8 @@ let mutations = {
 };
 let actions = {
     //获取验证码
-    async getCode({ commit, state, dispatch }, phone) {
-        let result = await  reqPostCode(phone);
+    async getCode({ commit, state, dispatch }, data) {
+        let result = await reqPostCode(data);
 
     },
     //用户登录的地方:非常非常重要

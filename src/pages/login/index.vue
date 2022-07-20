@@ -14,14 +14,15 @@
           </ul>
 
           <div class="content">
+
             <!-- 登录密码与账号输入的地方 -->
             <form action="##">
               <div class="input-text clearFix">
-                <span></span>
+                <span class="user"></span>
                 <input
                   type="text"
                   placeholder="邮箱/用户名/手机号"
-                  v-model="phone"
+                  v-model="userName"
                 />
               </div>
               <div class="input-text clearFix">
@@ -72,19 +73,20 @@ export default {
   data() {
     return {
       //收集账号与密码
-      phone: "",
+      userName: "",
       password: "",
+      code:"",
     };
   },
   methods: {
     //登录按钮
     async login() {
       //整理参数
-      const { userName, password } = this;
+      const {userName,password} = this;
       //在发登录请求
       try {
         //登录成功
-        await this.$store.dispatch("userLogin", { userName, password });
+        await this.$store.dispatch("userLogin", {userName,password});
 
         let goPath = this.$route.query.redirect||'/home';
         //跳转到首页
